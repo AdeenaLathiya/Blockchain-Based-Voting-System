@@ -4,7 +4,7 @@
   display: grid;
   border-radius: 10px;
   box-sizing: border-box;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr;
   column-gap: 100px;
 
   .left-panel {
@@ -29,6 +29,20 @@
       background: $theme-gray;
       margin-top: 30px;
       border-radius: 10px;
+    }
+
+    .info {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
+      width: 200px;
     }
   }
 }

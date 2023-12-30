@@ -18,10 +18,10 @@ const Start = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string>("");
   const [name, setName] = useState<string>("");
-  const [info, setInfo] = useState<string>("");
+  const [info, setInfo] = useState<string>("Candidates' information Section");
 
   const candidateField = useRef<HTMLInputElement>(null);
-  const candidateInfoField = useRef<HTMLInputElement>(null);
+  // const candidateInfoField = useRef<HTMLInputElement>(null);
 
   return (
     <div className="form-container">
@@ -48,10 +48,10 @@ const Start = () => {
               break;
             }
 
-            if (candidate.info.length < 10) {
-              candidatesError = "invalid info for " + candidate.name;
-              break;
-            }
+            // if (candidate.info.length < 10) {
+            //   candidatesError = "invalid info for " + candidate.name;
+            //   break;
+            // }
           }
 
           setError(candidatesError);
@@ -142,8 +142,8 @@ const Start = () => {
                     setCandidates([...candidates, newCandidate]);
                     if (candidateField.current)
                       candidateField.current.value = "";
-                    if (candidateInfoField.current)
-                      candidateInfoField.current.value = "";
+                    // if (candidateInfoField.current)
+                    //   candidateInfoField.current.value = "";
                   }}
                 >
                   Add
@@ -151,7 +151,7 @@ const Start = () => {
               </div>
             </div>
 
-            <div className="input-container">
+            {/* <div className="input-container">
               <div className="add-candidate-wrapper">
                 <input
                   type="text"
@@ -162,7 +162,7 @@ const Start = () => {
                   }}
                 />
               </div>
-            </div>
+            </div> */}
 
             <button className="login-button button-primary" type="submit">
               Start Election

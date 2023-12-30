@@ -9,7 +9,7 @@ const Profile = (props: RouteProps) => {
 
   return (
     <div className="profile-wrapper">
-      <div className="left-panel">
+      {/* <div className="left-panel">
         <div className="person-icon">
           <i className="bi bi-person-circle"></i>
         </div>
@@ -17,15 +17,22 @@ const Profile = (props: RouteProps) => {
         <button onClick={authContext.logout} className="button-primary">
           Logout
         </button>
-      </div>
+      </div> */}
 
       <div className="right-panel">
         <span className="title-small">Profile</span>
 
+        {/* <div className="skeleton"></div>
         <div className="skeleton"></div>
         <div className="skeleton"></div>
-        <div className="skeleton"></div>
-        <div className="skeleton"></div>
+        <div className="skeleton"></div> */}
+
+        <div className="skeleton info">{authContext.name}</div>
+        <div className="skeleton info">{authContext.email}</div>
+        <div className="skeleton info">{authContext.citizenshipNumber}</div>
+        <button onClick={authContext.logout} className=" button-primary button">
+          Logout
+        </button>
       </div>
     </div>
   );

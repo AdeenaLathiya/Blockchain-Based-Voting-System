@@ -9,12 +9,16 @@ type ContextProps = {
 type User = {
   id: number;
   name: string;
+  email: string;
+  citizenshipNumber: string;
   admin: boolean;
 };
 
 export const AuthContext = createContext({
   id: 0,
   name: "",
+  email: "",
+  citizenshipNumber: "",
   isAdmin: false,
   authenticated: false,
   accessToken: "",
@@ -29,6 +33,8 @@ export default (props: ContextProps): JSX.Element => {
   const [authentication, setAuthentication] = useState({
     id: 0,
     name: "",
+    email: "",
+  citizenshipNumber: "",
     isAdmin: false,
     authenticated: false,
     accessToken: "",
@@ -61,6 +67,8 @@ export default (props: ContextProps): JSX.Element => {
     setAuthentication({
       id: user.id,
       name: user.name,
+      email: user.email,
+      citizenshipNumber: user.citizenshipNumber,
       isAdmin: user.admin,
       authenticated: true,
       accessToken: token,
@@ -76,6 +84,8 @@ export default (props: ContextProps): JSX.Element => {
     setAuthentication({
       id: 0,
       name: "",
+      email: "",
+      citizenshipNumber: "",
       isAdmin: false,
       authenticated: false,
       accessToken: "",
@@ -90,6 +100,8 @@ export default (props: ContextProps): JSX.Element => {
       value={{
         id: authentication.id,
         name: authentication.name,
+        email: authentication.email,
+        citizenshipNumber: authentication.citizenshipNumber,
         isAdmin: authentication.isAdmin,
         authenticated: authentication.authenticated,
         accessToken: authentication.accessToken,
